@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Noticias de Baní</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Noticias de Baní</h1>
+  <section id="noticias">
+    <p>Cargando noticias...</p>
+  </section>
+
+  <script>
+    fetch('noticias.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('noticias');
+        container.innerHTML = '';
+
+        data.forEach((noticia, i) => {
+          const item = document.createElement('article');
+          item.innerHTML = `
+            <h2><a href="${noticia.link}" target="_blank">${noticia.titulo}</a></h2>
+            <p>${noticia.resumen}</p>
+          `;
+          container.appendChild(item);
+        });
+      })
+      .catch(error => {
+        document.getElementById('noticias').innerHTML = '<p>Error al cargar noticias.</p>';
+      });
+  </script>
+</body>
+</html>

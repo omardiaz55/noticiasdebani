@@ -1,0 +1,24 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #f8f8f8;
+}
+
+h1 {
+  text-align: center;
+}
+
+article {
+  background: white;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+a {
+  color: #336699;
+  text-decoration: none;
+}
